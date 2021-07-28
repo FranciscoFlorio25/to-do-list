@@ -145,3 +145,16 @@ h1 {
 .icono-editar {
   color: #fff;
 }
+
+@media only screen and (max-width: 800px){
+  *{
+    font-size: medium;
+  }
+	.App{
+		width: 325px;
+	}
+  .iconos{
+    font-size: medium;
+  }
+
+}
