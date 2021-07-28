@@ -9,7 +9,7 @@
 body {
   background: linear-gradient(
     90deg,
-    rgb(235, 85, 160) 0%,
+    rgb(113, 85, 235) 0%,
     rgb(142, 218, 201) 100%
   );
 }
@@ -19,7 +19,11 @@ body {
   justify-content: start;
   width: 520px;
   min-height: 600px;
-  background: #253a94;
+  background: linear-gradient(
+    40deg,
+    rgb(64, 156, 121) 0%,
+    rgb(153, 11, 235) 100%
+  );
   text-align: center;
   margin: 128px auto;
   padding-bottom: 32px;
@@ -64,23 +68,26 @@ h1 {
   text-transform: capitalize;
 }
 
-.editar {
-  border: 2px solid #149fff;
-  border-radius: 10px;
+.input_editar{
+  border: 2px solid #14e4ff;
   padding: 14px 32px 14px 16px;
   background: transparent;
-  border: none;
+  color: #fff;
+  outline: none;
+  
 }
 
+
 .boton_to-do_editar {
+  border: none;
   background: linear-gradient(
     90deg,
-    rgba(20, 159, 255, 1) 0%,
+    rgb(48, 178, 238) 0%,
     rgba(17, 122, 255, 1) 100%
   );
-  border-radius: 10px;
-  border: none;
   padding: 16px 22px;
+  text-transform: capitalize;
+  color: #fff;
 }
 
 .to_do-container {
@@ -148,13 +155,16 @@ h1 {
 
 @media only screen and (max-width: 800px){
   *{
-    font-size: medium;
+    font-size: auto;
   }
 	.App{
-		width: 325px;
+		width: 50%;
 	}
-  .iconos{
-    font-size: medium;
+  .input_to-do{
+    width: 30%;
   }
 
+  .input_editar{
+    width: 30%;
+  }
 }

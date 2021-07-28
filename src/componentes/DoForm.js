@@ -32,7 +32,7 @@ function DoForm(props) {
                 placeholder="Editar" 
                 value={input} 
                 name='text'
-                className="editar"
+                className="input_editar"
                 onChange={handleChange}
                 ref={inputRef}
                 />
