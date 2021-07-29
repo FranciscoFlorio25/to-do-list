@@ -11,6 +11,7 @@ function ToDo  ({to_dos, ToDoComplete, eliminarToDo, actualizarToDo}) {
         id: null,
         value: ''
     });
+    //actualizamos tarea
     const enviarActualizacion = valor => {
         actualizarToDo(edit.id, valor);
         setEdit({
@@ -23,7 +24,6 @@ function ToDo  ({to_dos, ToDoComplete, eliminarToDo, actualizarToDo}) {
         edit={edit} 
         onSubmit={enviarActualizacion}/>
     }
-    //existe un problema, el usuario debe tocar la palabra, sino no sé marcara como completado.
     return to_dos.map((to_do, index)=>(
         <div 
          className={to_do.isComplete ? 'do_fila completo' :'do_fila'}
