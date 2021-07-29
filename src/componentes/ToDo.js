@@ -3,6 +3,7 @@ import DoForm from './DoForm'
 //iconos
 import {AiFillDelete} from 'react-icons/ai';
 import {MdEdit} from 'react-icons/md'
+import {MdTouchApp} from 'react-icons/md'
 
 
 function ToDo  ({to_dos, ToDoComplete, eliminarToDo, actualizarToDo}) {
@@ -28,8 +29,11 @@ function ToDo  ({to_dos, ToDoComplete, eliminarToDo, actualizarToDo}) {
          className={to_do.isComplete ? 'do_fila completo' :'do_fila'}
          key ={index} 
         >
-            <div key={to_do.id} onClick={() => ToDoComplete(to_do.id)}>
-                {to_do.text}
+            <div className= 'seleccionador' key={to_do.id} >
+                <MdTouchApp
+                    onClick={() => ToDoComplete(to_do.id)}
+                 />
+                 {to_do.text}   
             </div>
             <div className='iconos'>
              <AiFillDelete
@@ -40,6 +44,7 @@ function ToDo  ({to_dos, ToDoComplete, eliminarToDo, actualizarToDo}) {
                 onClick={() => setEdit({id: to_do.id, value: to_do.text})}
                 className='icono-editar'
              />
+
             </div>
         </div>
     ));

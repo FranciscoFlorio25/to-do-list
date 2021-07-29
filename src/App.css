@@ -139,6 +139,14 @@ h1 {
     rgb(1, 251, 218) 100%
   );
 }
+.seleccionador{
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 10px;
+  color: #fff;
+}
 
 .iconos {
   display: flex;
