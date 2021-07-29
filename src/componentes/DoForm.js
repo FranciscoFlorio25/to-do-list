@@ -55,7 +55,7 @@ function DoForm(props) {
         }
 
         </form>
-    )
+    );
 }
 
 export default DoForm

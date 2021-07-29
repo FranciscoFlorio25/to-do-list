@@ -5,7 +5,7 @@ import {AiFillDelete} from 'react-icons/ai';
 import {MdEdit} from 'react-icons/md'
 
 
-function ToDo({to_dos, ToDoComplete, eliminarToDo, actualizarToDo}) {
+function ToDo  ({to_dos, ToDoComplete, eliminarToDo, actualizarToDo}) {
     const [edit, setEdit] = useState({
         id: null,
         value: ''
@@ -22,29 +22,27 @@ function ToDo({to_dos, ToDoComplete, eliminarToDo, actualizarToDo}) {
         edit={edit} 
         onSubmit={enviarActualizacion}/>
     }
+    //existe un problema, el usuario debe tocar la palabra, sino no sé marcara como completado.
     return to_dos.map((to_do, index)=>(
         <div 
-         className='do_fila'
+         className={to_do.isComplete ? 'do_fila completo' :'do_fila'}
          key ={index} 
         >
-            <input
-            type="checkbox"/>
-            <div key={to_do.id}
-             onClick={() => ToDoComplete(to_do.id)}>
+            <div key={to_do.id} onClick={() => ToDoComplete(to_do.id)}>
                 {to_do.text}
             </div>
-            <div className="iconos">
+            <div className='iconos'>
              <AiFillDelete
                 onClick={() => eliminarToDo(to_do.id)}
-                className="icono-borrar"
+                className='icono-borrar'
              />
              <MdEdit
                 onClick={() => setEdit({id: to_do.id, value: to_do.text})}
-                className="icono-editar"
+                className='icono-editar'
              />
             </div>
         </div>
-    ))
-}
+    ));
+};
 
 export default ToDo

@@ -9,7 +9,7 @@ function DoLista() {
     const agregarToDo =to_do =>{
         //chequeamos que no ingresen vacio
         if(to_do.text.length === 0){
-            return
+            return;
         }
         const nuevoToDo =[to_do, ...to_dos];
         setToDo(nuevoToDo);
@@ -18,9 +18,9 @@ function DoLista() {
     const actualizarToDo = (to_doId, nuevoValor) =>{
         //chequeamos que no ingresen vacio
         if(nuevoValor.text.length === 0){
-            return
+            return;
         }
-        setToDo(previo => previo.map(item =>(item.id == to_doId ? nuevoValor: item))
+        setToDo(previo => previo.map(item =>(item.id === to_doId ? nuevoValor: item))
         )
     }
     //eliminar tarea
@@ -32,10 +32,10 @@ function DoLista() {
     const ToDoComplete = id => {
         let actualizarToDo= to_dos.map(to_do =>{
             if(to_do.id===id){
-                to_do.isCompleted =!to_do.isCompleted
+                to_do.isComplete= !to_do.isComplete;
             }
             return to_do;
-        })
+        });
         setToDo(actualizarToDo);
     }
     return (
