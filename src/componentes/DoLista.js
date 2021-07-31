@@ -1,10 +1,9 @@
-import React, {useState} from 'react'
-import FolderList from './FolderList'
-import DoForm from './DoForm'
-import ToDo from './ToDo'
+import React, {useState} from 'react';
+import DoForm from './DoForm';
+import ToDo from './ToDo';
+import FolderList from './FolderList';
 //iconos
 import {IoIosArrowRoundBack} from 'react-icons/io'
-import { id } from 'prelude-ls'
 
 function DoLista() {
     const [to_dos,setToDo] =useState([]);
@@ -46,9 +45,8 @@ function DoLista() {
     return (
         <div>
             <IoIosArrowRoundBack 
-            //onClick= {ToFolders}
+            onClick= {<FolderList/> }
             className='icono volver-icono'/>
-
             <h1>The Greatest to-do list</h1>
             <DoForm onSubmit={agregarToDo} />
             <ToDo 

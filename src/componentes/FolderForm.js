@@ -1,7 +1,8 @@
 import React, {useState, useEffect, useRef} from 'react'
 
 function FolderForm(props) {
-    const [input,setInput]=useState(props.edit ? props.edit.value: '');
+    const [input,setInput]=useState(props.edit ? props.edit.value: '' );
+
     const handleChange = e =>{
         setInput(e.target.value);
     }
@@ -9,19 +10,19 @@ function FolderForm(props) {
     useEffect(() => {
         inputRef.current.focus()
     });
+    
     const handleSubmit = e =>{
     //evitamos refresh de la pagina al apretar el boton
        e.preventDefault();
-    
        //agregamos una carpeta con un id diferente por cada ingreso
        props.onSubmit({
             id: window.performance.now(),
-            text: input
+            text: input,
        });
       //reiniciamos el input
       setInput('');
-        
     }
+
     return (
         <form className="formulario" onSubmit={handleSubmit}>
             {props.edit ? (

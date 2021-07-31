@@ -5,7 +5,6 @@ import {AiFillDelete} from 'react-icons/ai';
 import {MdEdit} from 'react-icons/md'
 import {MdTouchApp} from 'react-icons/md'
 
-
 function ToDo  ({to_dos, ToDoComplete, eliminarToDo, actualizarToDo}) {
     const [edit, setEdit] = useState({
         id: null,

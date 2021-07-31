@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react'
-
 function DoForm(props) {
+    
     const [input,setInput]=useState(props.edit ? props.edit.value: '');
     const handleChange = e =>{
         setInput(e.target.value);
