@@ -1,19 +1,16 @@
 import React, {useState} from 'react'
 import FolderForm from './FolderForm'
-import DoLista from './DoLista';
 //iconos
 import {AiFillDelete} from 'react-icons/ai';
 import {MdEdit} from 'react-icons/md'
 import {BsFolder} from 'react-icons/bs'
-import App from '../App';
 
-function DoFolder({doFolders,eliminarFolder, actualizarFolder}) {
+function DoFolder({doFolders,toTheFolder,eliminarFolder, actualizarFolder}) {
    //tratando de guardar una lista nueva dentro del estado
     const [edit, setEdit] = useState({
         id: null,
         value: '',
     });
-
     //actualizamos carpeta
     const enviarActualizacion = valor => {
         actualizarFolder(edit.id, valor);
@@ -22,14 +19,7 @@ function DoFolder({doFolders,eliminarFolder, actualizarFolder}) {
             value: '',
         });
     }
-    //estoy asignanod mal el id seguramente.
-    const toTheFolder = id =>{
-        return doFolders.map(id,DoLista)(
-            <div value={id}>
-                <DoLista/>
-            </div>
-        )
-    }
+
     if(edit.id){
         return <FolderForm 
         edit={edit} 
@@ -40,9 +30,10 @@ function DoFolder({doFolders,eliminarFolder, actualizarFolder}) {
          className="folder-fila"
          key ={index} 
         >
-            <div className= 'iconos seleccionador_folder' key={doFolder.id} >
+            <div className= 'iconos' key={doFolder.id} >
                 <BsFolder
                     onClick={() => toTheFolder(doFolder.id)}
+                    className = 'seleccionador_folder'
                  />
                  {doFolder.text}
             </div>

@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import DoForm from './DoForm';
 import ToDo from './ToDo';
-import FolderList from './FolderList';
 //iconos
 import {IoIosArrowRoundBack} from 'react-icons/io'
+import FolderList from './FolderList';
 
 function DoLista() {
     const [to_dos,setToDo] =useState([]);
@@ -31,6 +31,7 @@ function DoLista() {
         const eliminar = [...to_dos].filter(to_do => to_do.id !== id)
         setToDo(eliminar);
     }
+    
     //marcar tarea como completada
     const ToDoComplete = id => {
         let actualizarToDo= to_dos.map(to_do =>{
@@ -41,12 +42,11 @@ function DoLista() {
         });
         setToDo(actualizarToDo);
     }
-    
     return (
         <div>
-            <IoIosArrowRoundBack 
-            onClick= {<FolderList/> }
-            className='icono volver-icono'/>
+            <IoIosArrowRoundBack className='icono volver-icono'
+             onClick= { <FolderList/>}
+            />
             <h1>The Greatest to-do list</h1>
             <DoForm onSubmit={agregarToDo} />
             <ToDo 

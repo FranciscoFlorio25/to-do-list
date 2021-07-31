@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import DoFolder from './DoFolder';
 import FolderForm from './FolderForm';
+import DoLista from './DoLista';
 
 function FolderList() {
     const [doFolders,setFolder] =useState([]);
@@ -15,6 +16,17 @@ function FolderList() {
 
         setFolder(nuevaFolder);
     }
+    //obtenemos el id que conseguimos cliqueando en la carpeta. (por las dudas)
+    const getFolderId =id=>{
+        return (id)   
+    }
+    const toTheFolder = id =>{
+        return doFolders.map(id,DoLista)(
+            <div key={id}>
+                <DoLista/>
+            </div>
+        )
+    } 
     //actualizamos carpeta
     const actualizarFolder = (doFolder_id, nuevoValor) =>{
         //chequeamos que no ingresen vacio
@@ -36,6 +48,8 @@ function FolderList() {
             <FolderForm onSubmit={agregarFolder}/>
             <DoFolder
             doFolders={doFolders} 
+            getFolderId={getFolderId}
+            toTheFolder={toTheFolder}
             eliminarFolder={eliminarFolder}
             actualizarFolder={actualizarFolder}
             />
