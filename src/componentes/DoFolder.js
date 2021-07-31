@@ -5,7 +5,7 @@ import {AiFillDelete} from 'react-icons/ai';
 import {MdEdit} from 'react-icons/md'
 import {BsFolder} from 'react-icons/bs'
 
-function DoFolder({doFolders,toTheFolder,eliminarFolder, actualizarFolder}) {
+function DoFolder({doFolders,getFolderId,toTheFolder,eliminarFolder, actualizarFolder}) {
    //tratando de guardar una lista nueva dentro del estado
     const [edit, setEdit] = useState({
         id: null,
@@ -32,6 +32,7 @@ function DoFolder({doFolders,toTheFolder,eliminarFolder, actualizarFolder}) {
         >
             <div className= 'iconos' key={doFolder.id} >
                 <BsFolder
+                    onClick={() => getFolderId(doFolder.id)}
                     onClick={() => toTheFolder(doFolder.id)}
                     className = 'seleccionador_folder'
                  />

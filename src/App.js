@@ -7,7 +7,6 @@ function App() {
     <div className="App">
       <FolderList/>
     </div>
-
   );
 }
 export default App;
